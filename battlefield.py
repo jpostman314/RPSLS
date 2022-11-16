@@ -1,11 +1,13 @@
 # *****CLASS THAT DETERMINES THE FLOW OF THE GAME*****
+
+
 from player import Player
 
 class Battlefield:
 
     def __init__(self) -> None:
-        self.player_one = Player("Josh")
-        self.player_two = Player("Kendra")
+        self.player_one = Player()
+        self.player_two = Player()
         pass
 
     def run_game(self):
@@ -37,11 +39,28 @@ class Battlefield:
         print("Spock vaporizes Rock.")
         print("Rock crushes Scissors.")
         print("")
-        pass
+        
 
     def choose_num_of_players(self):
-        number_of_players = int(input("How many players? Please type 1 or 2: "))
-        pass
+        valid_response = False
+        
+        while valid_response == False:
+            number_of_players = int(input("How many players? Please type 1 or 2: "))
+            if number_of_players == 1:
+                self.player_one.name = input("What is your name Player 1? ")
+                print(f"Welcome to the game {self.player_one.name}!")
+                valid_response = True
+            elif number_of_players == 2:
+                self.player_one.name = input("What is your name Player 1? ")
+                print(f"Welcome to the game {self.player_one.name}!")
+                self.player_two.name = input("What is your name Player 2? ")
+                print(f"Welccome to the game {self.player_two.name}!")
+                valid_response = True
+            else:
+                print("")
+                print("That is an invalid response. Please type 1 or 2.")
+                print("")
+        
 
     def battle_phase(self):
         pass
