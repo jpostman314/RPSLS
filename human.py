@@ -13,8 +13,9 @@ class Human(Player):
         print("Choose 3 for Lizard.")
         print("Choose 4 for Spock.")
         print("")
-        self.current_gesture = input(f"Which gesture would you like to choose {self.name}? ")
-        print(f"{self.name} has chosen {self.gestures_list[int(self.current_gesture)]}." )
+        user_input = input(f"Which gesture would you like to choose {self.name}? ")
+        print(f"{self.name} has chosen {self.gestures_list[int(user_input)]}." )
+        self.current_gesture = self.gestures_list[int(user_input)]
         return self.current_gesture
     def player_name(self):
         pass
