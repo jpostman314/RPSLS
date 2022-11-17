@@ -4,15 +4,16 @@ class Player:
 
     def __init__(self):
         self.name = "Player 1"
-        self.wins = 0
-        self.losses = 0
+        self.score = 0
+        self.current_gesture = "Empty"
+        self.gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+
 
     def player_name(self):
-        self.player_name = input("What is your name? ")
-        print(self.name)
+        pass
 
-    def add_player_win(self):
-        self.wins += 1
+    def add_to_player_score(self):
+        self.score += 1
 
-    def add_player_loss(self):
-        self.losses -= 1
+    def choose_gesture(self):
+        pass
