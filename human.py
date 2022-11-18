@@ -6,14 +6,22 @@ class Human(Player):
         super().__init__()
 
     def choose_gesture(self):
-        print("")
-        print("Choose 0 for Rock.")
-        print("Choose 1 for Paper.")
-        print("Choose 2 for Scissors.")
-        print("Choose 3 for Lizard.")
-        print("Choose 4 for Spock.")
-        print("")
-        user_input = input(f"Which gesture would you like to choose {self.name}? ")
+        valid_answer = False
+        while valid_answer == False:
+            user_input = input(f"Which gesture would you like to choose {self.name}? ")
+            if user_input == "0":
+                valid_answer = True
+            elif user_input == "1":
+                valid_answer = True
+            elif user_input == "2":
+                valid_answer = True
+            elif user_input == "3":
+                valid_answer = True
+            elif user_input == "4":
+                valid_answer = True
+            else:
+                print("That is an invalid selection. Please try again.")
+
         print(f"{self.name} has chosen {self.gestures_list[int(user_input)]}." )
         self.current_gesture = self.gestures_list[int(user_input)]
         return self.current_gesture

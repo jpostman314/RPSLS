@@ -21,7 +21,7 @@ class Battlefield:
 
     def display_welcome(self):
         print("")
-        print("Welcome to Rock Paper Scissors Lizard Spock!")
+        print("                             Welcome to Rock Paper Scissors Lizard Spock!")
         print("")
 
     def display_rules(self):
@@ -41,6 +41,19 @@ class Battlefield:
         print("Rock crushes Scissors.")
         print("")
         
+    def display_gestures(self):
+        print("")
+        print("Your possible gesture choices are: ")
+        print("")
+        print("Type 0 for Rock.")
+        print("Type 1 for Paper.")
+        print("Type 2 for Scissors.")
+        print("Type 3 for Lizard.")
+        print("Type 4 for Spock.")
+        print("")
+        print("Please select your gesture using the number keys.")
+        print("")
+
 
     def choose_num_of_players(self):
         valid_response = False
@@ -73,7 +86,6 @@ class Battlefield:
     
 
     def battle_phase(self):
-        self.human_players = 2
         games_played = 0
         turn_counter = 0
         
@@ -81,10 +93,12 @@ class Battlefield:
         
         while games_played < 3:
             if turn_counter % 2 == 0 and games_played < 4:
+                self.display_gestures()
                 self.player_one.choose_gesture()
                 player_ones_choice = self.player_one.current_gesture
                 turn_counter += 1
             elif turn_counter % 2 != 0 and games_played < 4:
+                self.display_gestures()
                 self.player_two.choose_gesture()
                 player_twos_choice = self.player_two.current_gesture
                 turn_counter += 1
@@ -93,16 +107,16 @@ class Battlefield:
                     if player_twos_choice == "Rock":
                         print(f"You have both chosen Rock. It's a tie!")
                     elif player_twos_choice == "Paper":
-                        print(f"Paper covers rock. {self.player_two.name} wins!")
+                        print(f"Paper covers rock. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Scissors":
-                        print(f"Rock crushes Scissors. {self.player_one.name} wins!")
+                        print(f"Rock crushes Scissors. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Lizard":
-                        print(f"Rock crushes Lizard. {self.player_one.name} wins!")
+                        print(f"Rock crushes Lizard. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Spock":
-                        print(f"Spock vaporizes Rock. {self.player_two.name} wins!")
+                        print(f"Spock vaporizes Rock. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     print(f"{self.player_one.name}'s score is now {self.player_one.score}.")
                     print(f"{self.player_two.name}'s score is now {self.player_two.score}.")
@@ -110,18 +124,18 @@ class Battlefield:
 
                 elif player_ones_choice == "Paper":
                     if player_twos_choice == "Rock":
-                        print(f"Paper covers Rock. {self.player_one.name} wins!")
+                        print(f"Paper covers Rock. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Paper":
                         print(f"You have both chosen Paper. It's a tie!")
                     elif player_twos_choice == "Scissors":
-                        print(f"Scissors cut Paper. {self.player_two.name} wins!")
+                        print(f"Scissors cut Paper. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Lizard":
-                        print(f"Lizard eats Paper. {self.player_two.name} wins!")
+                        print(f"Lizard eats Paper. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Spock":
-                        print(f"Paper disproves Spock. {self.player_one.name} wins!")
+                        print(f"Paper disproves Spock. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     print(f"{self.player_one.name}'s score is now {self.player_one.score}.")
                     print(f"{self.player_two.name}'s score is now {self.player_two.score}.")
@@ -129,18 +143,18 @@ class Battlefield:
 
                 elif player_ones_choice == "Scissors":
                     if player_twos_choice == "Rock":
-                        print(f"Rock crushes Scissors. {self.player_two.name} wins!")
+                        print(f"Rock crushes Scissors. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Paper":
-                        print(f"Scissors cut Paper. {self.player_one.name} wins!")
+                        print(f"Scissors cut Paper. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Scissors":
                         print(f"You have both chosen Scissors. It's a tie!")
                     elif player_twos_choice == "Lizard":
-                        print(f"Scissors decapitates Lizard. {self.player_one.name} wins!")
+                        print(f"Scissors decapitates Lizard. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Spock":
-                        print(f"Spock smashes Scissors. {self.player_two.name} wins!")
+                        print(f"Spock smashes Scissors. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     print(f"{self.player_one.name}'s score is now {self.player_one.score}.")
                     print(f"{self.player_two.name}'s score is now {self.player_two.score}.")
@@ -148,18 +162,18 @@ class Battlefield:
 
                 elif player_ones_choice == "Lizard":
                     if player_twos_choice == "Rock":
-                        print(f"Rock crushes Lizard. {self.player_two.name} wins!")
+                        print(f"Rock crushes Lizard. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Paper":
-                        print(f"Lizard eats Paper. {self.player_one.name} wins!")
+                        print(f"Lizard eats Paper. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Scissors":
-                        print(f"Scissors decapitates Lizard. {self.player_two.name} wins!")
+                        print(f"Scissors decapitates Lizard. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Lizard":
                         print(f"You have both chosen Lizard. It's a tie!")
                     elif player_twos_choice == "Spock":
-                        print(f"Lizard poisons Spock. {self.player_one.name} wins!")
+                        print(f"Lizard poisons Spock. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     print(f"{self.player_one.name}'s score is now {self.player_one.score}.")
                     print(f"{self.player_two.name}'s score is now {self.player_two.score}.")
@@ -167,16 +181,16 @@ class Battlefield:
 
                 elif player_ones_choice == "Spock":
                     if player_twos_choice == "Rock":
-                        print(f"Spock vaporizes Rock. {self.player_one.name} wins!")
+                        print(f"Spock vaporizes Rock. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Paper":
-                        print(f"Paper disproves Spock. {self.player_two.name} wins!")
+                        print(f"Paper disproves Spock. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Scissors":
-                        print(f"Spock smashes Scissors. {self.player_one.name} wins!")
+                        print(f"Spock smashes Scissors. {self.player_one.name} wins this round!")
                         self.player_one.score += 1
                     elif player_twos_choice == "Lizard":
-                        print(f"Lizard poisons Spock. {self.player_two.name} wins!")
+                        print(f"Lizard poisons Spock. {self.player_two.name} wins this round!")
                         self.player_two.score += 1
                     elif player_twos_choice == "Spock":
                         print(f"You have both chosen Spock. It's a tie!")
