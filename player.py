@@ -8,12 +8,3 @@ class Player:
         self.current_gesture = "Empty"
         self.gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
-
-    def player_name(self):
-        pass
-
-    def add_to_player_score(self):
-        self.score += 1
-
-    def choose_gesture(self):
-        pass

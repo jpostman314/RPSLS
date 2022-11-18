@@ -80,17 +80,13 @@ class Battlefield:
                 print("")
                 print("That is an invalid response. Please type 1 or 2.")
                 print("")
-            return number_of_players
-        number_of_players = self.human_players
+
     
     
 
     def battle_phase(self):
         games_played = 0
         turn_counter = 0
-        
-       
-        
         while games_played < 3:
             if turn_counter % 2 == 0 and games_played < 4:
                 self.display_gestures()
@@ -198,11 +194,6 @@ class Battlefield:
                     print(f"{self.player_one.name}'s score is now {self.player_one.score}.")
                     print(f"{self.player_two.name}'s score is now {self.player_two.score}.")
                     games_played += 1
-
-            else:
-                print("")
-                print("That is an invalid selection. Please type 0, 1, 2, 3 or 4.")
-                print("")
 
 
     def display_winner(self):

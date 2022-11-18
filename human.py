@@ -22,8 +22,8 @@ class Human(Player):
             else:
                 print("That is an invalid selection. Please try again.")
 
+        print("")
         print(f"{self.name} has chosen {self.gestures_list[int(user_input)]}." )
+        print("")
         self.current_gesture = self.gestures_list[int(user_input)]
         return self.current_gesture
-    def player_name(self):
-        pass
